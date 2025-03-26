@@ -44,3 +44,29 @@ int main() {
     
     return 0;
 }
+
+
+
+
+
+#include <iostream>
+
+using namespace std;
+
+int main() {
+    ios::sync_with_stdio(false);
+    cin.tie(nullptr);
+    
+    int N;
+    while (cin >> N && N != -1) {
+        int numero_abandonado = 0, V;
+        
+        for (int i = 0; i < N; i++) {
+            cin >> V;
+            numero_abandonado ^= V; // XOR para encontrar o número sem par
+        }
+        
+        cout << numero_abandonado << '\n';
+    }
+    return 0;
+}
