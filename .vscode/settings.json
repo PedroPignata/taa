@@ -6,7 +6,10 @@
         "iostream": "cpp",
         "iosfwd": "cpp",
         "pribit": "cpp",
-        "bitset": "cpp"
+        "bitset": "cpp",
+        "iomanip": "cpp",
+        "prateleiras": "cpp",
+        "list": "cpp"
     },
     "C_Cpp.errorSquiggles": "disabled"
 }
