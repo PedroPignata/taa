@@ -4,8 +4,8 @@
 using namespace std;
 
 int calculoMcCarthy(int num){
-    if(num > 100)
-    return num - 10;
+    if(num > 100){
+    return num - 10;}
 
     return calculoMcCarthy(calculoMcCarthy(num+11));
 }
