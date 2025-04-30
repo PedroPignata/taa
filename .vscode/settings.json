@@ -9,7 +9,15 @@
         "bitset": "cpp",
         "iomanip": "cpp",
         "prateleiras": "cpp",
-        "list": "cpp"
+        "list": "cpp",
+        "vector": "cpp",
+        "barrier": "cpp",
+        "chrono": "cpp",
+        "random": "cpp",
+        "latch": "cpp",
+        "limits": "cpp",
+        "semaphore": "cpp",
+        "valarray": "cpp"
     },
     "C_Cpp.errorSquiggles": "disabled"
 }
