@@ -1,33 +1,81 @@
-#include <iostream>
-#include <vector>
+#include <bits/stdc++.h>
 using namespace std;
 
-int main() {
-    ios::sync_with_stdio(false);
-    cin.tie(nullptr);
-    
+class arvoreBinaria
+{
+private:
+    vector<int> arvore;
+    int pai(int i) { return i / 2; }
+    int left(int i) { return 2 * i; }
+    int right(int i) { return 2 * i + 1; }
+
+public:
+    arvoreBinaria()
+    {
+        arvore.push_back(0);
+    }
+
+    void
+    colocar(int num)
+    {
+        arvore.push_back(num);
+    }
+
+    void consultar(int a)
+    {
+        int esq = left(a);
+        int dir = right(a);
+        if (arvore.size() == 2)
+        {
+            cout << "NULL" << endl;
+            return;
+        }
+
+        if (esq < arvore.size() && arvore[esq] != -1)
+        {
+            cout << arvore[esq] << " ";
+        }
+        else
+        {
+            cout << "NULL ";
+        }
+
+        if (dir < arvore.size() && arvore[dir] != -1)
+        {
+            cout << arvore[dir] << endl;
+        }
+        else
+        {
+            cout << "NULL" << endl;
+        }
+    }
+    int size()
+    {
+        return arvore.size();
+    }
+};
+
+int main()
+{
     int N, C;
     cin >> N >> C;
-    
-    vector<int> tree(N);
-    for (auto& node : tree) cin >> node;
-    
-    while (C--) {
-        int pos;
-        cin >> pos;
-        pos--;
-        
-        if (pos < 0 || pos >= N) {
-            cout << "NULL NULL\n";
-            continue;
-        }
-        
-        int left = 2*pos + 1;
-        int right = 2*pos + 2;
-        
-        cout << (left < N && tree[left] != -1 ? to_string(tree[left]) : "NULL") << " "
-             << (right < N && tree[right] != -1 ? to_string(tree[right]) : "NULL") << "\n";
+
+    arvoreBinaria arvore2;
+
+    for (int i = 0; i < N; i++)
+    {
+        int V;
+        cin >> V;
+
+        arvore2.colocar(V);
     }
-    
+
+    for (int i = 0; i < C; i++)
+    {
+        int consulta;
+        cin >> consulta;
+
+        arvore2.consultar(consulta);
+    }
     return 0;
 }
