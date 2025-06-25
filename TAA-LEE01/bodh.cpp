@@ -29,8 +29,7 @@ int main() {
             break;
         }
 
-        // Verificação de limites
-        if (N >= (1ULL << 63)) {  // 2^63
+        if (N >= (1ULL << 63)) {
             cerr << "Erro: N está fora do limite permitido (0 ≤ N < 2^63)." << endl;
             continue;
         }
@@ -63,7 +62,7 @@ int main() {
         
         for (int i = 0; i < N; i++) {
             cin >> V;
-            numero_abandonado ^= V; // XOR para encontrar o número sem par
+            numero_abandonado ^= V;
         }
         
         cout << numero_abandonado << '\n';
